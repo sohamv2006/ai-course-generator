@@ -1,3 +1,4 @@
+
 import { json, pgTable, serial, varchar } from "drizzle-orm/pg-core";
 
 export const CourseList = pgTable('courseList', {

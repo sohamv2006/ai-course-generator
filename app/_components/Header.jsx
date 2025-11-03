@@ -5,7 +5,7 @@ import React from 'react'
 
 function Header() {
   return (
-    <div className="flex justify-between p-5 shadow-2xl bg-white rounded-lg">
+    <div className="flex justify-between p-5 shadow-md bg-white rounded-lg">
 
     <Image src={'/LOGI1.png'} width={100} height={100} alt="logo" />
     <SignInButton mode="modal">

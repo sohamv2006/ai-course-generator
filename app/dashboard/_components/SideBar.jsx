@@ -1,12 +1,15 @@
 "use client"
+import { UserCourseListcontext } from "@/app/_context/UserCourseListContext"
 import { Progress } from "@/components/ui/progress"
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import React from 'react'
+import React, { useContext } from 'react'
 import { HiOutlineHome, HiOutlineSquare3Stack3D, HiOutlineShieldCheck, HiOutlinePower } from "react-icons/hi2"
 
 function SideBar() {
+
+  const {userCourseList , setUserCourseList} = useContext(UserCourseListcontext); 
   const Menu = [
     { id: 1, name: 'Home',    icon: <HiOutlineHome />,           path: '/dashboard' },
     { id: 2, name: 'Explore', icon: <HiOutlineSquare3Stack3D />, path: '/dashboard/explore' },
@@ -19,16 +22,15 @@ function SideBar() {
   return (
     <div className="fixed h-full md:w-64 p-5 bg-gradient-to-b from-white to-gray-50 shadow-2xl shadow-black/20 border-r border-gray-200">
       {/* Logo */}
-      <div className="flex items-center justify-center mb-6">
         <Image 
           src="/LOGI1.png" 
           alt="logo" 
-          width={160} 
-          height={48} 
-          className="h-10 w-auto"
+          width={100} 
+          height={100} 
+          className="flex items-center mx-auto mb-4"
         />
-      </div>
-      <div className="border-b border-gray-200 mb-6"></div>
+        <hr className="my-5"/>
+
 
       {/* Menu */}
       <ul className="space-y-2">
@@ -61,8 +63,8 @@ function SideBar() {
       
       
       <div className="absolute bottom-10 w-[80%]">
-          <Progress value={60} />
-          <h2 className="text-sm my-2">3 out of 5 Cources Created </h2>
+          <Progress value={(userCourseList?.length/5)*100} />
+          <h2 className="text-sm my-2">{userCourseList?.length} out of 5 Cources Created </h2>
           <h2 className="text-xs text-gray-500">Upgrade your plan for unlimited Course Generation </h2>
       </div>
     </div>

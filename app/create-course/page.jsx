@@ -140,7 +140,6 @@ const checkstatus=()=>{
       <div className='flex justify-between mt-10'>  
         <Button disabled={activeIndex===0} 
         className={activeIndex === 0 ? "bg-purple-600 " : "bg-primary "}
-        variant = "outline"
         onClick={()=>setActiveIndex(activeIndex-1)} >
           Previous
         </Button>

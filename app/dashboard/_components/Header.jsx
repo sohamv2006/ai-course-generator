@@ -4,9 +4,12 @@ import { UserButton } from '@clerk/nextjs'
 
 function Header() {
   return (
-    <div className='flex justify-between items-center p-4 shadow-lg'>
-      <Image src={'/HLOGI1.png'} width={77} height={77} alt='hlogo'/>
-      <UserButton/>
+    <div className='flex justify-between items-center p-3 shadow-sm'>
+      <Image src={'/HLOGI1.png'} width={70} height={40} alt='hlogo'/>
+      <div className='mr-5 pt-2'>
+        <UserButton />
+      </div>
+      
     </div>
   )
 }
