@@ -30,43 +30,51 @@ export const GenerateCourseLayout_AI = model.startChat( {
       },
       {
         role: "model",
-        parts: [
+parts: [
+  {
+    text: `'''json
+    {
+      "course": {
+        "name": "Intro to Web Development",
+        "description": "A beginner-friendly course covering the basics of HTML, CSS, and JavaScript.",
+        "chapters": [
           {
-            text: `'''json
-            {
-              "course": {
-                "name": "Intro to Web Development",
-                "description": "A beginner-friendly course covering the basics of HTML, CSS, and JavaScript.",
-                "chapters": [
-                  {
-                    "chapter_name": "HTML Fundamentals",
-                    "about": "Understanding the structure and basic tags of HTML5.",
-                    "duration": "2 hours"
-                  },
-                  {
-                    "chapter_name": "Styling with CSS",
-                    "about": "Learning selectors, the box model, and responsive design techniques.",
-                    "duration": "3 hours"
-                  },
-                  {
-                    "chapter_name": "JavaScript Basics",
-                    "about": "Variables, data types, functions, and DOM manipulation.",
-                    "duration": "4 hours"
-                  }
-                ],
-                "category": "Web Development",
-                "topic": "Web Development",
-                "level": "Beginner",
-                "duration": "9 hours",
-                "numberOfChapters": 3
-              }
-            }
-            '''
-
-            Generate a course tutorial on the following details and adhere strictly to the JSON format provided above.
-            `
+            "chapter_name": "HTML Fundamentals",
+            "about": "Understanding the structure and basic tags of HTML5.",
+            "duration": "2 hours"
+          },
+          {
+            "chapter_name": "Styling with CSS",
+            "about": "Learning selectors, the box model, and responsive design techniques.",
+            "duration": "3 hours"
+          },
+          {
+            "chapter_name": "JavaScript Basics",
+            "about": "Variables, data types, functions, and DOM manipulation.",
+            "duration": "4 hours"
           }
         ],
+        "category": "Web Development",
+        "topic": "Web Development",
+        "level": "Beginner",
+        "duration": "9 hours",
+        "numberOfChapters": 3
+      }
+    }
+    '''
+
+      Generate a course tutorial STRICTLY following the JSON structure above.
+      DO NOT remove or skip any fields. The following fields MUST always be present: 
+      - "category"
+      - "topic"
+      - "level"
+      - "duration"
+      - "numberOfChapters"
+
+      Ensure the output is valid JSON only, without any extra text or commentary.`
+        }
+      ],
+
       }
     ]
   });

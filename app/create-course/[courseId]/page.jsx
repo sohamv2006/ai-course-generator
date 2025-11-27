@@ -33,7 +33,7 @@ function CourseLayout({params}) {
         chapters.forEach(async(chapter,index)=>{
             //call api to generate chapter content
             const PROMPT = 'Explain the concept in Detail on Topic:'+course?.name+', Chapter:'+chapter?.chapterName+', in JSON Format with list of array with field as title,explaination on given chapter in detail, Code Example(HTML field in <precode> format) if applicable'
-            if(index<3)
+            if(index< course?.courseOutput?.numberOfChapters)
             {
                 try{
                     let videoId='';
