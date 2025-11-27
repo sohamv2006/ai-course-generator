@@ -1,7 +1,15 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",            // required for @ alias
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"]          // keep your existing alias
     }
-  }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx"
+  ]
 }
